@@ -1,0 +1,140 @@
+body{
+    background-color: black;
+}
+.bar{
+    color: #393838;
+    overflow: hidden;
+}
+.container-container {
+    display: grid;
+    grid-template-columns: repeat(2, 720px);
+    grid-template-rows: repeat(2, 520px);
+    gap: 5px;
+}
+
+.container1, .container2, .container3, .container4 {
+    display: grid;
+    gap: 0px;
+}
+
+.linkedin{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#linkedin{
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: red;
+    font-size: 125px;
+    text-decoration: none;
+    margin: 0px;
+    padding: 7px;
+    line-height: 0.75;
+    display: block;
+    transition: transform 0.3s ease;
+}
+#linkedin:hover{
+    transform: scale(.9);
+    color: #FFD0F9;
+}
+.github{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+#github{
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: red;
+    font-size: 75px;
+    text-decoration: none;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    line-height: .75;
+    display: block;
+    transition: transform 0.3s ease;
+}
+#github:hover{
+    transform: scale(.9);
+    color: #FFD0F9;
+}
+.itch{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+#itch{
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: red;
+    font-size: 75px;
+    text-decoration: none;
+    margin: 0;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    line-height: 0.75;
+    display: block;
+    transition: transform 0.3s ease;
+}
+#itch:hover{
+    transform: scale(.9);
+    color: #FFD0F9;
+}
+.wrapper {
+    width: 275px;
+    height: 450px; /* Adjust height to match the Instagram text size */
+    position: relative;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 1;
+    display: flex; /* Use flexbox to center the rotated content */
+    align-items: center;
+    justify-content: center;
+}
+.instagram {
+    
+    height: auto;
+    transform-origin: center center;
+    transform: rotate(90deg); /* Rotate to 90 degrees */
+}
+
+#instagram{
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: red;
+    font-size: 110px;
+    text-decoration: none;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 53px;
+    line-height: 0.75;
+    font-stretch: expanded;
+    transform: scaleX(1.135);
+    display: block;
+    transition: transform 0.3s ease; 
+}
+#instagram:hover{
+    transform: scale(.97);
+    color: #FFD0F9;
+}
+
+.fjalla-one-regular {
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
