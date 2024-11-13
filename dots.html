@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dots.css">
+    <script src="dots.js"></script>
+</head>
+<body>
+
+    <select id="scale">
+        <option>minor</option>
+        <option>major</option>
+        <option>dorian</option>
+        <option>phrygian</option>
+        <option>lydian</option>
+        <option>mixolydian</option>
+        <option>locrian</option>
+        <option>minorPentatonic</option>
+    </select>
+   <br><br>
+    <select id="note">
+        <option>A</option>
+        <option>Bb</option>
+        <option>B</option>
+        <option>C</option>
+        <option>Db</option>
+        <option>D</option>
+        <option>Eb</option>
+        <option>E</option>
+        <option>F</option>
+        <option>Gb</option>
+        <option>G</option>
+        <option>Ab</option>
+    </select>
+    <br>
+    <button onclick="scales(document.getElementById('note'), document.getElementById('scale'));">shred</button>
+    <br>
+    <button onclick="toggler()">Toggle Unused</button>
+
+
+<div class="grid">
+
+      <!-- frets -->
+      <span class="frets">0</span>
+      <span class="frets">1</span>
+      <span class="frets">2</span>
+      <span class="frets">3</span>
+      <span class="frets">4</span>
+      <span class="frets">5</span>
+      <span class="frets">6</span>
+      <span class="frets">7</span>
+      <span class="frets">8</span>
+      <span class="frets">9</span>
+      <span class="frets">10</span>
+      <span class="frets">11</span>
+      <span class="frets">12</span>
+      <span class="frets">13</span>
+      
+      
+
+      
+     <!-- 1st String (E) -->
+     <span class="dot E" id="0,0">E</span>
+     <span class="dot F" id="0,1">F</span>
+     <span class="dot Gb" id="0,2">Gb</span>
+     <span class="dot G" id="0,3">G</span>
+     <span class="dot Ab" id="0,4">Ab</span>
+     <span class="dot A" id="0,5">A</span>
+     <span class="dot Bb" id="0,6">Bb</span>
+     <span class="dot B" id="0,7">B</span>
+     <span class="dot C" id="0,8">C</span>
+     <span class="dot Db" id="0,9">Db</span>
+     <span class="dot D" id="0,10">D</span>
+     <span class="dot Eb" id="0,11">Eb</span>
+     <span class="dot E" id="0,12">E</span>
+     <span class="dot F" id="0,13">F</span>
+     
+ 
+     <!-- 2nd String (B) -->
+     <span class="dot B" id="1,0">B</span>
+     <span class="dot C" id="1,1">C</span>
+     <span class="dot Db" id="1,2">Db</span>
+     <span class="dot D" id="1,3">D</span>
+     <span class="dot Eb" id="1,4">Eb</span>
+     <span class="dot E" id="1,5">E</span>
+     <span class="dot F" id="1,6">F</span>
+     <span class="dot Gb" id="1,7">Gb</span>
+     <span class="dot G" id="1,8">G</span>
+     <span class="dot Ab" id="1,9">Ab</span>
+     <span class="dot A" id="1,10">A</span>
+     <span class="dot Bb" id="1,11">Bb</span>
+     <span class="dot B" id="1,12">B</span>
+     <span class="dot C" id="1,13">C</span>
+     
+ 
+     <!-- 3rd String (G) -->
+     <span class="dot G" id="2,0">G</span>
+     <span class="dot Ab" id="2,1">Ab</span>
+     <span class="dot A" id="2,2">A</span>
+     <span class="dot Bb" id="2,3">Bb</span>
+     <span class="dot B" id="2,4">B</span>
+     <span class="dot C" id="2,5">C</span>
+     <span class="dot Db" id="2,6">Db</span>
+     <span class="dot D" id="2,7">D</span>
+     <span class="dot Eb" id="2,8">Eb</span>
+     <span class="dot E" id="2,9">E</span>
+     <span class="dot F" id="2,10">F</span>
+     <span class="dot Gb" id="2,11">Gb</span>
+     <span class="dot G" id="2,12">G</span>
+     <span class="dot Ab" id="2,13">Ab</span>
+     
+ 
+     <!-- 4th String (D) -->
+     <span class="dot D" id="3,0">D</span>
+     <span class="dot Eb" id="3,1">Eb</span>
+     <span class="dot E" id="3,2">E</span>
+     <span class="dot F" id="3,3">F</span>
+     <span class="dot Gb" id="3,4">Gb</span>
+     <span class="dot G" id="3,5">G</span>
+     <span class="dot Ab" id="3,6">Ab</span>
+     <span class="dot A" id="3,7">A</span>
+     <span class="dot Bb" id="3,8">Bb</span>
+     <span class="dot B" id="3,9">B</span>
+     <span class="dot C" id="3,10">C</span>
+     <span class="dot Db" id="3,11">Db</span>
+     <span class="dot D" id="3,12">D</span>
+     <span class="dot Eb" id="3,13">Eb</span>
+     
+ 
+     <!-- 5th String (A) -->
+     <span class="dot A" id="4,0">A</span>
+     <span class="dot Bb" id="4,1">Bb</span>
+     <span class="dot B" id="4,2">B</span>
+     <span class="dot C" id="4,3">C</span>
+     <span class="dot Db" id="4,4">Db</span>
+     <span class="dot D" id="4,5">D</span>
+     <span class="dot Eb" id="4,6">Eb</span>
+     <span class="dot E" id="4,7">E</span>
+     <span class="dot F" id="4,8">F</span>
+     <span class="dot Gb" id="4,9">Gb</span>
+     <span class="dot G" id="4,10">G</span>
+     <span class="dot Ab" id="4,11">Ab</span>
+     <span class="dot A" id="4,12">A</span>
+     <span class="dot Bb" id="4,13">Bb</span>
+     
+ 
+     <!-- 6th String (E) -->
+     <span class="dot E" id="5,0">E</span>
+     <span class="dot F" id="5,1">F</span>
+     <span class="dot Gb" id="5,2">Gb</span>
+     <span class="dot G" id="5,3">G</span>
+     <span class="dot Ab" id="5,4">Ab</span>
+     <span class="dot A" id="5,5">A</span>
+     <span class="dot Bb" id="5,6">Bb</span>
+     <span class="dot B" id="5,7">B</span>
+     <span class="dot C" id="5,8">C</span>
+     <span class="dot Db" id="5,9">Db</span>
+     <span class="dot D" id="5,10">D</span>
+     <span class="dot Eb" id="5,11">Eb</span>
+     <span class="dot E" id="5,12">E</span>
+     <span class="dot F" id="5,13">F</span>
+     
+  
+    
+</div>
+<!-- <button onclick="decode(document.getElementById('scale'));"></button> -->
+</body>
+</html>
