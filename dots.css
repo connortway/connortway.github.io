@@ -20,21 +20,35 @@
 
 .grid{
     display: grid;
-    grid-template-columns: repeat(14, 62px);
+    grid-template-columns: repeat(17, 62px);
     grid-template-rows: repeat(7, 25px);
     gap: 10px;
     background-image: url('fretboard.png');
-    background-position: 0px 20px;
+    background-position: 10px 43px;
     background-repeat: no-repeat;
-    grid-template-columns: 2fr 3.4fr 3.3fr 3fr 2.9fr 2.7fr 2.5fr 2.3fr 2.1fr 2fr 1.9fr 1.7fr 1.5fr 1fr; /* Example with first column wider */
-
-    
+    grid-template-columns: 2fr 3.3fr 3.1fr 3.1fr 2.9fr 2.8fr 2.5fr 2.3fr 2.1fr 2fr 1.9fr 1.8fr 1.7fr 1.5fr 1.3fr 1.3fr 1.2fr 1fr; 
 }
 
-body {
+.neck{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin: 0;
+}
+
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+} */
+
+.ui{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin: 0;
 }

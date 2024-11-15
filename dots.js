@@ -172,8 +172,10 @@ function generateScale(startNote, scaleType) {
 
 
 function scales(note, scale){
+    let wasToggled = false;
     if(isToggled !== false){
         toggler();
+        wasToggled = true;
     }
     clean('#bbb');
     
@@ -198,6 +200,10 @@ function scales(note, scale){
                 element.style.backgroundColor = "green";
             }
         });
+    }
+
+    if(wasToggled === true){
+        toggler();
     }
 
     
