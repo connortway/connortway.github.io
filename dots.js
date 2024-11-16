@@ -1,50 +1,18 @@
-function mycolor(){
-    for(let i = 0; i < 72; i++){
-    document.getElementById("dot").style.backgroundColor = "blue";
-    }
-}
-
-function getScale(scale){
-    const scales = new Map([
-        ["Aminor", ["A", "C", "D", "E", "G"]],
-        ["Cminor", ["C", "Eb", "F", "G", "Bb"]],
-        ["Amajor", ["A", "B", "Db", "D", "E", "Gb", "Ab"]],
-        ["Chromatic", ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"]]
-    ]);
-    return scales.get(scale);
-}
 
 
-const Aminor = [
-    [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
-]
-const matrices = {
-    Aminor: [
-        [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
-    ],
-    matrixB: [
-        [0, 0, 0],
-        [1, 1, 1],
-        [2, 2, 2]
-    ],
-    matrixC: [
-        [5, 4, 3],
-        [2, 1, 0],
-        [9, 8, 7]
-    ]
-}
+// function getScale(scale){
+//     const scales = new Map([
+//         ["Aminor", ["A", "C", "D", "E", "G"]],
+//         ["Cminor", ["C", "Eb", "F", "G", "Bb"]],
+//         ["Amajor", ["A", "B", "Db", "D", "E", "Gb", "Ab"]],
+//         ["Chromatic", ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"]]
+//     ]);
+//     return scales.get(scale);
+// }
 
 
+
+//resets each note to specified color
 function clean(color) {
     // Get all elements with the class 'dot'
     const dots = document.querySelectorAll('.dot');
@@ -55,53 +23,56 @@ function clean(color) {
     });
 }
 
-function decode(scale){
-    clean('#bbb');
-    const matrices = {
-        Aminor: [
-            [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
-        ],
-        Cminor: [
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]
-        ],
-        matrixC: [
-            [5, 4, 3],
-            [2, 1, 0],
-            [9, 8, 7]
-        ]
-    }
-    const pee = scale.value;
-    const matrix = matrices[pee];
-    console.log(matrix);
-    console.log(pee);
+// functon to create any pattern on the fretboard (maybe use later for chords or to isolate certain sections of fretboard)
+//unused right now
+// function decode(scale){
+//     clean('#bbb');
+//     const matrices = {
+//         Aminor: [
+//             [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
+//             [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+//             [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+//             [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+//             [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
+//             [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+//         ],
+//         Cminor: [
+//             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
+//             [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
+//             [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
+//             [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
+//             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
+//             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]
+//         ],
+//         matrixC: [
+//             [5, 4, 3],
+//             [2, 1, 0],
+//             [9, 8, 7]
+//         ]
+//     }
+//     const pee = scale.value;
+//     const matrix = matrices[pee];
+//     console.log(matrix);
+//     console.log(pee);
 
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
-            if(matrix[i][j] === 1){
-                let elementId = `${i},${j}`;
-                let dot = document.getElementById(elementId);
-                dot.style.backgroundColor="blue";
-            } 
+//     for (let i = 0; i < matrix.length; i++) {
+//         for (let j = 0; j < matrix[i].length; j++) {
+//             if(matrix[i][j] === 1){
+//                 let elementId = `${i},${j}`;
+//                 let dot = document.getElementById(elementId);
+//                 dot.style.backgroundColor="blue";
+//             } 
 
-            if(matrix[i][j] === 2){
-                let elementId = `${i},${j}`;
-                let dot = document.getElementById(elementId);
-                dot.style.backgroundColor="red";
-            }
-            // console.log(`Element at [${i}][${j}]: ${matrix[i][j]}`);
-        }
-    }
-}
+//             if(matrix[i][j] === 2){
+//                 let elementId = `${i},${j}`;
+//                 let dot = document.getElementById(elementId);
+//                 dot.style.backgroundColor="red";
+//             }
+//             // console.log(`Element at [${i}][${j}]: ${matrix[i][j]}`);
+//         }
+//     }
+// }
+
 
 let isToggled = false;
 
@@ -172,7 +143,9 @@ function generateScale(startNote, scaleType) {
 
 
 function scales(note, scale){
+    //to check if the toggle button is toggled
     let wasToggled = false;
+    // toggle all notes to be showing before recoloring according to scale
     if(isToggled !== false){
         toggler();
         wasToggled = true;
@@ -182,14 +155,7 @@ function scales(note, scale){
    
     let notes = generateScale(note.value, scale.value);
 
-    //let notes = getScale(scale.value);
-    //console.log(getScale(notes));
-    // notes is the list of notes in the scale
-    // let one = document.querySelectorAll('.' + notes[0]);
-    // let two = document.querySelectorAll('.' + notes[1]);
-    // let three = document.querySelectorAll('.' + notes[3]);
-
-    
+    //assigns scale to notes 
     for (let i = 0; i < notes.length; i++) {
         let things = document.querySelectorAll('.' + notes[i]);
         console.log('Selected elements for', notes[i], things);
@@ -202,6 +168,7 @@ function scales(note, scale){
         });
     }
 
+    //retoggles toggle button if it was toggled before
     if(wasToggled === true){
         toggler();
     }
