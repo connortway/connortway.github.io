@@ -49,6 +49,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  height: 20vh;
   margin: 0;
+}
+#listScaleDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18px;
+  margin: 0;
+}
+
+#listScale{
+  font-size: xx-large;
 }

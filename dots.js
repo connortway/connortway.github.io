@@ -98,13 +98,63 @@ function toggler() {
         }
     });
 }
+//boolean to toggle sharps or flats
+let isSharps = false;
+//function ot handle toggle
+function sharps(){
+    const sharps = ['C#','D#', "F#", 'G#', 'A#'];
+    const flats = ['Db','Eb', 'Gb', 'Ab', 'Bb'];
+
+    let listScale = document.getElementById("listScale");
+
+    if (isSharps === false){
+        isSharps = true;
+        for(let i = 0; i < flats.length; i++){
+           let note = document.querySelectorAll('.' + flats[i]);
+           let newScale = listScale.textContent.replaceAll(flats[i], sharps[i]);
+           listScale.innerHTML = newScale;
+           
+           note.forEach(function(element){
+                element.innerHTML = sharps[i];
+            });
+        }
+    
+
+    }else {
+        isSharps = false;
+        for(let i = 0; i < flats.length; i++){
+
+            let note = document.querySelectorAll('.' + flats[i]);
+
+            
+            let newScale = listScale.textContent.replaceAll(sharps[i], flats[i]);
+            listScale.innerHTML = newScale;
+
+            note.forEach(function(element){
+                element.innerHTML = flats[i];
+            })
+         }
+    }
+}
 
 
 
 function generateScale(startNote, scaleType) {
     // Chromatic scale: all possible notes in one octave
+    // let chromaticScale = []
     const chromaticScale = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+    //const chromaticScaleSharps = ['C', 'C#', 'D', 'D#', 'E', 'F', "F#", 'G', 'G#', 'A', 'A#', 'B'];
     
+
+    // if(isSharps === true){
+    //     chromaticScale = chromaticScaleSharps;
+    // }else{
+    //     chromaticScale = chromaticScaleFlats;
+    // }
+
+    console.log(chromaticScale);
+    
+
     // Scale patterns represented in semitone intervals from one note to the next
     const scalePatterns = {
         major: [2, 2, 1, 2, 2, 2, 1],     // Major scale
@@ -138,6 +188,8 @@ function generateScale(startNote, scaleType) {
         scale.push(chromaticScale[currentIndex]);
     }
 
+  
+
     return scale;
 }
 
@@ -152,13 +204,19 @@ function scales(note, scale){
     }
     clean('#bbb');
     
-   
+    
     let notes = generateScale(note.value, scale.value);
+
+    let listScale = document.getElementById("listScale");
+
+    listScale.innerHTML = notes;
+    
+   
 
     //assigns scale to notes 
     for (let i = 0; i < notes.length; i++) {
         let things = document.querySelectorAll('.' + notes[i]);
-        console.log('Selected elements for', notes[i], things);
+        //console.log('Selected elements for', notes[i], things);
         things.forEach(function(element) {
             if(notes[i] === note.value){
             element.style.backgroundColor = 'yellow';
@@ -171,6 +229,10 @@ function scales(note, scale){
     //retoggles toggle button if it was toggled before
     if(wasToggled === true){
         toggler();
+    }
+    console.log(isSharps);
+    if(isSharps === false){
+        sharps();
     }
 
     
