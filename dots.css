@@ -63,3 +63,46 @@
 #listScale{
   font-size: xx-large;
 }
+
+#rootDot{
+  height: 25px;
+  width: 25px;
+  background-color: rgb(239, 71, 111);
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.8;
+  text-align: center;
+  padding-top: 3px;
+}
+#thirdDot{
+  height: 25px;
+  width: 25px;
+  background-color: rgb(38, 84, 124);
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.8;
+  text-align: center;
+  padding-top: 3px;
+}
+#fifthDot{
+  height: 25px;
+  width: 25px;
+  background-color: rgb(255, 209, 102);
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.8;
+  text-align: center;
+  padding-top: 3px;
+}
+
+#colorKey{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 250px;
+  margin: auto;
+
+
+}
