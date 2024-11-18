@@ -25,6 +25,8 @@ function clean(color) {
 
 function toggler() {
     let dots = document.querySelectorAll('.dot');
+    let button = document.getElementById('toggler');
+
 
     dots.forEach(function(element) {
         // Get the computed style of the element for background color and opacity
@@ -38,9 +40,12 @@ function toggler() {
             if (currentOpacity === '0.8') { // Fully visible
                 element.style.opacity = '0'; // Make it transparent
                 isToggled = true
+                button.innerHTML = "Show unused"
             } else {
                 element.style.opacity = '0.8';
+                button.innerHTML = "Hide unused"
                 isToggled = false; // Make it fully visible
+
             }
         }
     });
@@ -52,9 +57,11 @@ function sharps(){
     const flats = ['Db','Eb', 'Gb', 'Ab', 'Bb'];
 
     let listScale = document.getElementById("listScale");
+    let button = document.getElementById('sharps');
 
     if (isSharps === false){
         isSharps = true;
+        button.innerHTML = "Flats"
         for(let i = 0; i < flats.length; i++){
            let note = document.querySelectorAll('.' + flats[i]);
            let newScale = listScale.textContent.replaceAll(flats[i], sharps[i]);
@@ -68,6 +75,7 @@ function sharps(){
 
     }else {
         isSharps = false;
+        button.innerHTML = "Sharps"
         for(let i = 0; i < flats.length; i++){
 
             let note = document.querySelectorAll('.' + flats[i]);
@@ -218,9 +226,7 @@ function scales(note, scale){
         toggler();
     }
     console.log(isSharps);
-    if(isSharps === false){
-        sharps();
-    }
+  
 
     
 
@@ -232,7 +238,7 @@ function simpleColors(){
     if(isSimple === false){
         isSimple = true;
         dots.forEach(dot => {
-            
+                // iterate through each dot and set the background color
             if (dot.style.backgroundColor === blue || dot.style.backgroundColor === yellow){
                 dot.style.backgroundColor = "rgb(95,173,86)";
             }
@@ -244,7 +250,6 @@ function simpleColors(){
 
     
     
-    // Loop through each dot and set the background color
 
 }
 
