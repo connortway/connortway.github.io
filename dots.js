@@ -137,6 +137,43 @@ function sharps(){
     }
 }
 
+function triads(note, scale){
+
+    clean('#bbb')
+
+
+    let notes = generateScale(note.value, scale.value);
+
+    let triad = [];
+
+    
+    triad.push(notes[0]);
+    triad.push(notes[2]) 
+    triad.push(notes[4]);
+
+    console.log(triad);
+
+    for (let i = 0; i < triad.length; i++) {
+        let things = document.querySelectorAll('.' + triad[i]);
+        //console.log('Selected elements for', notes[i], things);
+        things.forEach(function(element) {
+            if(i === 1){
+            element.style.backgroundColor = 'yellow';
+            }else if(i === 2){
+                element.style.backgroundColor = "green";
+            }else{
+                element.style.backgroundColor = "red";
+            }
+        });
+    }
+
+    let listScale = document.getElementById("listScale");
+
+    listScale.innerHTML = triad;
+
+    
+}
+
 
 
 function generateScale(startNote, scaleType) {
