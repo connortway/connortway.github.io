@@ -5,6 +5,8 @@ body{
     color: #393838;
     overflow: hidden;
 }
+
+
 .container-container {
     display: grid;
     grid-template-columns: repeat(2, 720px);
