@@ -100,11 +100,9 @@ function triads(note, scale){
 
     clean('#bbb')
 
-
     let notes = generateScale(note.value, scale.value);
 
     let triad = [];
-
     
     triad.push(notes[0]);
     triad.push(notes[2]) 
@@ -142,7 +140,8 @@ function triads(note, scale){
 function generateScale(startNote, scaleType) {
    //chromatic scale all possible notes in one octave
     const chromaticScale = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
-    
+    //let scaleValue = scaleType.value;
+    //console.log(scaleValue);
     console.log(chromaticScale);
 
     // Scale patterns represented in semitone intervals from one note to the next
@@ -199,8 +198,9 @@ function scales(note, scale){
     let notes = generateScale(note.value, scale.value);
 
     let listScale = document.getElementById("listScale");
-
-    listScale.innerHTML = notes;
+    
+    let updatedNotes = notes.slice(0, -1);
+    listScale.innerHTML = updatedNotes;
     
    
 

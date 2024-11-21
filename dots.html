@@ -12,6 +12,7 @@
     <div class="ui">
 
         <select id="note">
+            <option value="" selected disabled hidden>Note ▼</option>
             <option>A</option>
             <option>Bb</option>
             <option>B</option>
@@ -27,6 +28,7 @@
         </select>
 
         <select id="scale">
+            <option value="" selected disabled hidden>Scale ▼</option>
             <option>minor</option>
             <option>major</option>
             <option>dorian</option>
@@ -34,13 +36,13 @@
             <option>lydian</option>
             <option>mixolydian</option>
             <option>locrian</option>
-            <option>minorPentatonic</option>
-            <option>minorBlues</option>
-            <option>majorBlues</option>
+            <option value="minorPentatonic">Minor Pentatonic</option>
+            <option value="minorBlues">Minor Blues</option>
+            <option value="major Blues">Major Blues</option>
         </select>
 
-        <button onclick="scales(document.getElementById('note'), document.getElementById('scale'));">Scale</button>
-        <button id="triads" onclick="triads(document.getElementById('note'), document.getElementById('scale'))">triads</button>
+        <button id="scaleButton" onclick="scales(document.getElementById('note'), document.getElementById('scale'));">Scale</button>
+        <button id="triadButton" onclick="triads(document.getElementById('note'), document.getElementById('scale'))">triads</button>
 
         
         <button id="toggler" onclick="toggler()">Hide Unused</button>
