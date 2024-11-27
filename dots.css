@@ -18,7 +18,7 @@
     display: inline-block;
   }
 
-   #scaleButton, #triadButton, #toggler, #sharps{
+   #scaleButton, #triadButton, #toggler, #sharps, #seventhButton{
     height: 5vh;
     width: auto;
     margin: 1px;
@@ -31,7 +31,7 @@
     
   }
 
-  #note, #scale{
+  .list{
     height: 5vh;
     width: auto;
     margin: 1px;
@@ -47,11 +47,11 @@
  
   }
 
-  #note:hover, #scale:hover{
+  .list:hover{
     background-color: #a4c3b2;
   }
 
-  #scaleButton:active{
+  #scaleButton:active, #triadButton:active , #toggler:active , #sharps:active, #seventhButton:active {
     background-color: #a4c3b2;
   }
 
@@ -74,7 +74,7 @@
   align-items: center;
   height: 300px;
   width: 1200px;
-  margin: 0;
+  margin: auto;
 }
 
 /* body {

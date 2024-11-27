@@ -9,9 +9,9 @@
 </head>
 <body>
     
-    <div class="ui">
+    <div class="ui" id="ui">
 
-        <select id="note">
+        <select class="list" id="note">
             <option value="" selected disabled hidden>Note ▼</option>
             <option>A</option>
             <option>Bb</option>
@@ -27,7 +27,7 @@
             <option>Ab</option>
         </select>
 
-        <select id="scale">
+        <select class="list" id="scale">
             <option value="" selected disabled hidden>Scale ▼</option>
             <option>minor</option>
             <option>major</option>
@@ -43,16 +43,18 @@
 
         <button id="scaleButton" onclick="scales(document.getElementById('note'), document.getElementById('scale'));">Scale</button>
         <button id="triadButton" onclick="triads(document.getElementById('note'), document.getElementById('scale'))">triads</button>
+        <button id="seventhButton" onclick="Seventh(document.getElementById('note'), document.getElementById('scale'))">7th Chords</button>
 
         
         <button id="toggler" onclick="toggler()">Hide Unused</button>
         <button id="sharps" onclick="sharps()">Sharps</button>
         <br>
         
-
-       
     </div>
+    <div class="ui2" id="ui2"></div>
+    <!-- <button id="newScale" onclick="newScale(document.getElementById('ui'))">add</button> -->
     <br>
+
     <div id="listScaleDiv">
         
         <p id="listScale"> </p>

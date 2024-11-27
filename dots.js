@@ -115,7 +115,7 @@ function triads(note, scale){
         //console.log('Selected elements for', notes[i], things);
         things.forEach(function(element) {
             if(i === 0){
-            element.style.backgroundColor = red;
+                element.style.backgroundColor = red;
             }else if(i === 1){
                 element.style.backgroundColor = blue;
             }else{
@@ -135,6 +135,62 @@ function triads(note, scale){
     
 }
 
+
+function Seventh(note, scale){
+    if(isToggled === true) {
+        toggler();
+        wasToggled = true;
+    }
+
+    clean('#bbb')
+
+    let notes = generateScale(note.value, scale.value);
+
+    let seventh = [];
+
+    seventh.push(notes[0]);
+    seventh.push(notes[2]);
+    seventh.push(notes[4]);
+    seventh.push(notes[6]);
+
+    for (let i = 0; i < seventh.length; i++) {
+        let things = document.querySelectorAll('.' + seventh[i]);
+        //console.log('Selected elements for', notes[i], things);
+        things.forEach(function(element) {
+            if(i === 0){
+                element.style.backgroundColor = red;
+            }else if(i === 1){
+                element.style.backgroundColor = blue;
+            }else if(i === 2){
+                element.style.backgroundColor = yellow;
+            }else{
+                element.style.backgroundColor = green;
+            }
+        });
+    }
+
+    let listScale = document.getElementById("listScale");
+
+    listScale.innerHTML = seventh;
+
+    if(wasToggled === true){
+        toggler();
+    }
+    
+}
+
+
+function newScale(){
+    const ui = document.getElementById('ui');
+    let ui2 = document.getElementById('ui2');
+    ui2.innerHTML = ui.innerHTML;
+    const noteList = ui2.querySelector('#note');
+    const scaleList = ui2.querySelector('#scale');
+    noteList.setAttribute('id', 'note2');
+    scaleList.setAttribute('id', 'scale2');
+    const scaleButton = ui2.querySelector('#scaleButton');
+    scaleButton.setAttribute('onclick', 'scales(document.getElementById(\'note2\'), document.getElementById(\'scale2\'));')
+}
 
 
 function generateScale(startNote, scaleType) {
@@ -225,10 +281,50 @@ function scales(note, scale){
     if(wasToggled === true){
         toggler();
     }
-    console.log(isSharps);
-  
+    console.log(isSharps); 
 
+}
+
+function doubleScale(note, scale){
+       // toggle all notes to be showing before recoloring according to scale
+       if(isToggled !== false){
+        toggler();
+        wasToggled = true;
+    }
+    //clean('#bbb');
     
+    
+    let notes = generateScale(note.value, scale.value);
+
+    let listScale = document.getElementById("listScale");
+    
+    let updatedNotes = notes.slice(0, -1);
+    listScale.innerHTML = updatedNotes;
+    
+   
+
+    //assigns scale to notes 
+    for (let i = 0; i < notes.length; i++) {
+        let things = document.querySelectorAll('.' + notes[i]);
+        //console.log('Selected elements for', notes[i], things);
+        things.forEach(function(element) {
+            if(notes[i] === note.value){
+            element.style.backgroundColor = red;
+            }else if(i === 2){
+                element.style.backgroundColor = blue;
+            }else if(i === 4){
+                element.style.backgroundColor = yellow;
+            }else{
+                element.style.backgroundColor = green;
+            }
+        });
+    }
+
+    //retoggles toggle button if it was toggled before
+    if(wasToggled === true){
+        toggler();
+    }
+    console.log(isSharps); 
 
 }
 
