@@ -25,6 +25,7 @@ function clean(color) {
 }
 
 function notes(note){
+    clean(grey);
     let notes = note.value;
     let dots = document.querySelectorAll(`.${notes}`);
     dots.forEach(function(element){
