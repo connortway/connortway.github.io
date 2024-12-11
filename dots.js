@@ -12,6 +12,7 @@ let red = 'rgb(239, 71, 111)';
 let blue = 'rgb(38, 84, 124)';
 let yellow = 'rgb(255, 209, 102)';
 let green = "rgb(95, 173, 86)";
+let grey = "rgb(187, 187, 187)";
 
 function clean(color) {
     // Get all elements with the class 'dot'
@@ -21,6 +22,14 @@ function clean(color) {
     dots.forEach(dot => {
         dot.style.backgroundColor = color;
     });
+}
+
+function notes(note){
+    let notes = note.value;
+    let dots = document.querySelectorAll(`.${notes}`);
+    dots.forEach(function(element){
+        element.style.backgroundColor = red;
+    })
 }
 
 function toggler() {
@@ -51,7 +60,7 @@ function toggler() {
     });
 }
 
-//function to handle toggle
+//function to handle sharps or flats
 function sharps(){
     const sharps = ['C#','D#', "F#", 'G#', 'A#'];
     const flats = ['Db','Eb', 'Gb', 'Ab', 'Bb'];
@@ -182,14 +191,19 @@ function Seventh(note, scale){
 
 function newScale(){
     const ui = document.getElementById('ui');
-    let ui2 = document.getElementById('ui2');
+    let temp = document.getElementById('ui2');
     ui2.innerHTML = ui.innerHTML;
+    let removeButton = document.createElement("button");
+    removeButton.textContent = "remove";
+    removeButton.addEventListener("click", remove);
+    ui2.appendChild(removeButton);
     const noteList = ui2.querySelector('#note');
     const scaleList = ui2.querySelector('#scale');
     noteList.setAttribute('id', 'note2');
     scaleList.setAttribute('id', 'scale2');
     const scaleButton = ui2.querySelector('#scaleButton');
-    scaleButton.setAttribute('onclick', 'scales(document.getElementById(\'note2\'), document.getElementById(\'scale2\'));')
+    scaleButton.setAttribute('onclick', 'doubleScale(document.getElementById(\'note2\'), document.getElementById(\'scale2\'));')
+
 }
 
 
@@ -287,6 +301,7 @@ function scales(note, scale){
 
 function doubleScale(note, scale){
        // toggle all notes to be showing before recoloring according to scale
+       simpleColors();
        if(isToggled !== false){
         toggler();
         wasToggled = true;
@@ -310,11 +325,9 @@ function doubleScale(note, scale){
         things.forEach(function(element) {
             if(notes[i] === note.value){
             element.style.backgroundColor = red;
-            }else if(i === 2){
-                element.style.backgroundColor = blue;
-            }else if(i === 4){
-                element.style.backgroundColor = yellow;
-            }else{
+            }else if(element.style.backgroundColor !== grey || element.style.backgroundColor !== red){
+                element.style.backgroundColor = 'purple';
+            }else {
                 element.style.backgroundColor = green;
             }
         });
@@ -328,6 +341,18 @@ function doubleScale(note, scale){
 
 }
 
+function remove(){
+    let note = document.getElementById("note");
+    let scale = document.getElementById("scale");
+    if(note.value !== "null" && scale.value !== "null"){
+        scales(note, scale);
+        console.log("poo");
+    }
+
+    let ui = document.getElementById("ui2");
+    ui.remove();
+}
+
 
 function simpleColors(){
     const dots = document.querySelectorAll('.dot');
@@ -336,7 +361,7 @@ function simpleColors(){
         dots.forEach(dot => {
                 // iterate through each dot and set the background color
             if (dot.style.backgroundColor === blue || dot.style.backgroundColor === yellow){
-                dot.style.backgroundColor = "rgb(95,173,86)";
+                dot.style.backgroundColor = green;
             }
         });
     }else{
