@@ -18,7 +18,7 @@
     display: inline-block;
   }
 
-   #scaleButton, #triadButton, #toggler, #sharps, #seventhButton, #notesButton{
+   #scaleButton, #triadButton, #toggler, #sharps, #seventhButton, #notesButton, #clear{
     height: 5vh;
     width: auto;
     margin: 1px;
@@ -51,7 +51,7 @@
     background-color: #a4c3b2;
   }
 
-  #scaleButton:active, #triadButton:active , #toggler:active , #sharps:active, #seventhButton:active, #notesButton:active {
+  #scaleButton:active, #triadButton:active , #toggler:active , #sharps:active, #seventhButton:active, #notesButton:active, #clear:active {
     background-color: #a4c3b2;
   }
 
