@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <script src="NotePractice.js"></script>
+    <link rel="stylesheet" href="NotePractice.css">
+<body>
+    <div class="inputs">
+        <button onclick="start()">start</button>
+        <button onclick="stop()">stop</button>
+        <input id="time" type="range" min="1000" max="10000" onchange="dynamicStart()"><br>
+    </div>
+    <div class="checkBoxes">
+        <input id="natural" type="checkbox" value="true">Natural Notes<br>
+        <input id="sharps" type="checkbox" value="true">Sharps<br>
+        <input id="flats" type="checkbox" value="true">Flats<br>
+    </div>
+    <div class="checkBoxes">
+        <input class="noteCheckbox" type="checkbox" value="A">A
+        <input class="noteCheckbox" type="checkbox" value="B">B
+        <input class="noteCheckbox" type="checkbox" value="C">C
+        <input class="noteCheckbox" type="checkbox" value="D">D
+        <input class="noteCheckbox" type="checkbox" value="E">E
+        <input class="noteCheckbox" type="checkbox" value="F">F
+        <input class="noteCheckbox" type="checkbox" value="G">G
+    </div>
+
+    <div class="displayContainer"><h1 class="displayNote">A</h1></div>
+    
+</body>
+</html>
