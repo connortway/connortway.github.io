@@ -211,9 +211,7 @@ function newScale(){
 function generateScale(startNote, scaleType) {
    //chromatic scale all possible notes in one octave
     const chromaticScale = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
-    //let scaleValue = scaleType.value;
-    //console.log(scaleValue);
-    console.log(chromaticScale);
+    
 
     // Scale patterns represented in semitone intervals from one note to the next
     const scalePatterns = {
@@ -225,8 +223,13 @@ function generateScale(startNote, scaleType) {
         minor: [2, 1, 2, 2, 1, 2, 2],    // Natural minor scale
         locrian: [1, 2, 2, 1, 2, 2, 2],
         minorPentatonic: [3, 2, 2, 3, 2],
+        majorPentatonic: [2, 2, 3, 2, 3],
         minorBlues: [3, 2 ,1 ,1 ,3 , 2],
-        majorBlues: [2, 1, 1, 3, 2, 3]    
+        majorBlues: [2, 1, 1, 3, 2, 3],
+        phrygianDominant: [1, 3, 1, 2, 1, 2, 2],
+        harmonicMinor: [2, 1, 2, 2, 1, 3, 1],
+        melodicMinor: [2, 1, 2, 2, 2, 2, 1],
+
     };
 
     // Get the pattern for the desired scale type
