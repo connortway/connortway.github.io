@@ -13,6 +13,7 @@ let blue = 'rgb(38, 84, 124)';
 let yellow = 'rgb(255, 209, 102)';
 let green = "rgb(95, 173, 86)";
 let grey = "rgb(187, 187, 187)";
+let orange = "rgb(255, 68, 51)";
 
 function clean(color) {
     // Get all elements with the class 'dot'
@@ -289,6 +290,8 @@ function scales(note, scale){
                 element.style.backgroundColor = blue;
             }else if(i === 4){
                 element.style.backgroundColor = yellow;
+            }else if(i === 6){
+                element.style.backgroundColor = orange;
             }else{
                 element.style.backgroundColor = green;
             }
