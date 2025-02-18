@@ -1,123 +1,31 @@
 
 
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="ConnorTway2.css">
-    <title>Connor Tway</title>
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="SimpleWebsite.css">
 </head>
 <body>
-    <div class="bar">Connor Tway <a href="dots.html">Guitar Scales</a></div>
-    <br>
-    <div class="container-container">
-        <!-- Container 1 -->
-        <div class="container1">
-            <div class="linkedin">
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-            </div>
-            <div class="itch">
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-            </div>
-            <div class="github">
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-            </div>
-            <div class="wrapper">
-                <div class="instagram">
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                </div>
-            </div>
-        </div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="overlay">
+        <div class="main">
+            
+                <a class="links" id="github" href="https://www.github.com/connortway">GitHub </a>
+                <a class="links" id="dots" href="dots.html">Scales</a>
+            
+                <a class="links" id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">Linkedin</a> 
 
-        <!-- Container 2 -->
-        <div class="container2">
-            <div class="linkedin">
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-            </div>
-            <div class="itch">
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-            </div>
-            <div class="github">
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-            </div>
-            <div class="wrapper">
-                <div class="instagram">
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Container 3 -->
-        <div class="container3">
-            <div class="linkedin">
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-            </div>
-            <div class="itch">
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-            </div>
-            <div class="github">
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-            </div>
-            <div class="wrapper">
-                <div class="instagram">
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Container 4 -->
-        <div class="container4">
-            <div class="linkedin">
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-                <a id="linkedin" href="https://www.linkedin.com/in/william-tway-90895a2b3/">LINKEDIN</a>
-            </div>
-            <div class="itch">
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-                <a id="itch" href="https://wyabill.itch.io">ITCH.IO</a>
-            </div>
-            <div class="github">
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-                <a id="github" href="https://www.github.com/connortway">GITHUB</a>
-            </div>
-            <div class="wrapper">
-                <div class="instagram">
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                    <a id="instagram" href="https://www.instagram.com/connortway/">INSTAGRAM</a>
-                </div>
-            </div>
+            
+                <a class="links" id="itch" href="https://wyabill.itch.io">Itch.io</a>
+                <a class="links" id="instagram" href="https://www.instagram.com/connortway/embed/">Instagram </a>
+                   
+            
         </div>
     </div>
-
+    <script src="SimpleWebsite.js"></script>
 </body>
 </html>
