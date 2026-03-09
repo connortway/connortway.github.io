@@ -46,7 +46,7 @@ canvas {
     position: absolute;
     color: white;
     text-align: center;
-    font-size: 24px;
+    font-size: 5vh;
     padding: 10px;
     border-radius: 8px;
 }
