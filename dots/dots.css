@@ -1,148 +1,182 @@
-.dot {
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.8;
-    text-align: center;
-    padding-top: 3px;
-    
-  }
-
-  #dot {
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-  }
-
-   #scaleButton, #triadButton, #toggler, #sharps, #seventhButton, #notesButton, #clear{
-    height: 5vh;
-    width: auto;
-    margin: 1px;
-    text-align: center;
-    font-size: 2vh;
-    background-color: #eaf4f4;
-    border-radius: 10%;
-    box-shadow: 2px 1px 3px ;
-    border: none;
-    
-  }
-
-  .list{
-    height: 5vh;
-    width: auto;
-    margin: 1px;
-    appearance: none;
-    -webkit-appearance: none;
-    text-align: center;
-    text-align-last: center;
-    font-size: 2vh;
-    background-color: #eaf4f4;
-    border-radius: 10%;
-    box-shadow: 2px 1px 3px ;
-    border: darkslategray;
- 
-  }
-
-  .list:hover{
-    background-color: #a4c3b2;
-  }
-
-  #scaleButton:active, #triadButton:active , #toggler:active , #sharps:active, #seventhButton:active, #notesButton:active, #clear:active {
-    background-color: #a4c3b2;
-  }
-
-
-
-.grid{
-    display: grid;
-    grid-template-columns: repeat(17, 62px);
-    grid-template-rows: repeat(7, 25px);
-    gap: 10px;
-    background-image: url('fretboard.png');
-    background-position: 10px 43px;
-    background-repeat: no-repeat;
-    grid-template-columns: 2fr 3.3fr 3.1fr 3.1fr 2.9fr 2.8fr 2.5fr 2.3fr 2.1fr 2fr 1.9fr 1.8fr 1.7fr 1.5fr 1.3fr 1.3fr 1.2fr 1fr; 
+:root {
+  /* Base Dark Mode Variables */
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-main: #e0e0e0;
+  --btn-bg: #2a2a2a;
+  --btn-border: #333333;
+  --btn-hover: #3a3a3a;
+  --fret-text: #888;
+  --shadow-color: rgba(0,0,0,0.5);
+  
+  /* Scale Colors */
+  --accent-red: #ef476f;
+  --accent-green: #5fad56;
+  --accent-blue: #26547c;
+  --accent-yellow: #ffd166;
+  --accent-orange: #ff4433;
 }
 
-.neck{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  width: 1200px;
-  margin: auto;
+/* Base Light Mode Variables */
+body.light-mode {
+  --bg-color: #f4f4f9;
+  --card-bg: #ffffff;
+  --text-main: #222222;
+  --btn-bg: #eaf4f4;
+  --btn-border: #cccccc;
+  --btn-hover: #d1e5e5;
+  --fret-text: #555;
+  --shadow-color: rgba(0,0,0,0.1);
 }
 
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-} */
-
-.ui{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20vh;
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
-}
-#listScaleDiv{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 18px;
-  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#listScale{
-  font-size: xx-large;
-}
-
-#rootDot{
-  height: 25px;
-  width: 25px;
-  background-color: rgb(239, 71, 111);
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.8;
-  text-align: center;
-  padding-top: 3px;
-}
-#thirdDot{
-  height: 25px;
-  width: 25px;
-  background-color: rgb(38, 84, 124);
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.8;
-  text-align: center;
-  padding-top: 3px;
-}
-#fifthDot{
-  height: 25px;
-  width: 25px;
-  background-color: rgb(255, 209, 102);
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.8;
-  text-align: center;
-  padding-top: 3px;
-}
-
-#colorKey{
+/* UI Controls Container */
+.ui {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px var(--shadow-color);
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Buttons and Selects */
+.list, button {
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 6px;
+  border: 1px solid var(--btn-border);
+  background-color: var(--btn-bg);
+  color: var(--text-main);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover, .list:hover {
+  background-color: var(--btn-hover);
+  border-color: var(--accent-green);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+#clear { border-color: var(--accent-red); }
+
+/* The Box for Scale Notes */
+#listScaleDiv {
+  background: var(--card-bg);
+  padding: 10px 40px;
+  border-radius: 8px;
+  margin: 15px 0;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 250px;
-  margin: auto;
-
-
+  min-width: 300px;
+  min-height: 50px;
+  transition: background-color 0.3s ease;
 }
+
+#listScale {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--accent-green);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Fretboard Container */
+.neck {
+  overflow-x: auto; 
+  width: 100%;
+  max-width: 100vw;
+  padding: 20px 0;
+}
+
+.grid {
+  display: grid;
+  width: 1200px; 
+  min-width: 1200px; 
+  margin: 0 auto; 
+  gap: 10px;
+  background-image: url('fretboard.png');
+  background-size: 100% auto; 
+  background-position: 11px 45px; 
+  background-repeat: no-repeat;
+  padding-top: 5px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* The Dots (Notes) */
+.dot {
+  height: 26px; 
+  width: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff; /* Keep text white inside dots for contrast against colors */
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.frets {
+  color: var(--fret-text);
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Full Color Key */
+#colorKey {
+  margin-top: 20px;
+  padding: 15px 25px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: background-color 0.3s ease;
+}
+
+.key-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#rootDot, #otherDot, #thirdDot, #fifthDot, #seventhDot {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#rootDot { background-color: var(--accent-red); }
+#otherDot { background-color: var(--accent-green); }
+#thirdDot { background-color: var(--accent-blue); }
+#fifthDot { background-color: var(--accent-yellow); }
+#seventhDot { background-color: var(--accent-orange); }
