@@ -1,3 +1,5 @@
+console.log("script loaded");
+
 // ===== NAVIGATION =====
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
@@ -128,3 +130,75 @@ toggle.addEventListener("click", () => {
   playing = !playing;
   toggle.textContent = playing ? "Stop Playing" : "Play Snake";
 });
+
+
+
+
+
+const slides = document.querySelectorAll(".carousel-slide")
+const prevBtn = document.querySelector(".prev")
+const nextBtn = document.querySelector(".next")
+const dotsContainer = document.querySelector(".carousel-dots")
+let currentIndex = 0
+let autoScrollInterval
+
+// Create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement("div")
+  dot.classList.add("dot")
+  if(i===0) dot.classList.add("active")
+  dot.addEventListener("click", ()=>goToSlide(i))
+  dotsContainer.appendChild(dot)
+})
+const dots = document.querySelectorAll(".dot")
+
+function updateCarousel() {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === currentIndex)
+  })
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentIndex)
+  })
+}
+
+// Buttons
+prevBtn.addEventListener("click", ()=>{
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length
+  updateCarousel()
+  resetAutoScroll()
+})
+nextBtn.addEventListener("click", ()=>{
+  currentIndex = (currentIndex + 1) % slides.length
+  updateCarousel()
+  resetAutoScroll()
+})
+
+// Go to specific slide
+function goToSlide(i){
+  currentIndex = i
+  updateCarousel()
+  resetAutoScroll()
+}
+
+// Auto-scroll every 20s
+function autoScroll(){
+  currentIndex = (currentIndex + 1) % slides.length
+  updateCarousel()
+}
+function resetAutoScroll(){
+  clearInterval(autoScrollInterval)
+  autoScrollInterval = setInterval(autoScroll, 20000)
+}
+autoScrollInterval = setInterval(autoScroll, 20000)
+
+// Touch support for mobile
+let startX = 0
+let endX = 0
+slides[0].parentElement.addEventListener("touchstart", e=>{
+  startX = e.touches[0].clientX
+})
+slides[0].parentElement.addEventListener("touchend", e=>{
+  endX = e.changedTouches[0].clientX
+  if(endX - startX > 50) prevBtn.click()
+  else if(startX - endX > 50) nextBtn.click()
+})

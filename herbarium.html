@@ -32,17 +32,73 @@
   <p class="project-description">
     Herbarium is a React web application focusing on getting people outside learning about their local environment. 
   </p>
+  <div class="carousel-wrapper">
+    <div class="carousel-container">
+      <div class="slides-track">
+        <!-- Add your text data directly to the HTML using data-* attributes -->
+        <div class="slide prev" data-index="0" 
+             data-title="Home Page" 
+             data-text="A simple main screen, direct user to either login or sign up.">
+          <img src="images/herbarium/Home Page.jpg" alt="Landscape">
+        </div>
+        
+        <div class="slide active" data-index="1" 
+             data-title="Login Page" 
+             data-text="A clean login page very simple, notice the embossed look for the box containing the input fields.">
+          <img src="images/herbarium/Login.jpg" alt="Portrait">
+        </div>
+        
+        <div class="slide next" data-index="2" 
+             data-title="Plant Map" 
+             data-text="Here is where the user can view and locate all of their previous plant finds on an interactive map.">
+          <img src="images/herbarium/Plant map.jpg" alt="Landscape 2">
+        </div>
+        
+        <div class="slide" data-index="3" 
+             data-title="Plant Info" 
+             data-text="This is where the user can view individual plants and receive care, environmental, and miscellaneous information about the selected plant. ">
+          <img src="images/herbarium/Plant singlview.jpg" alt="Portrait 2">
+        </div>
+        <div class="slide" data-index="4" 
+            data-title="Herbarium" 
+            data-text="The Herbarium is where users can view all of the plants they have collected. Each entry is a link to the more detailed Plant Info page.">
+          <img src="images/herbarium/Pokedex.jpg" alt="Portrait 2">
+        </div>
+        <div class="slide" data-index="5" 
+            data-title="Sign up" 
+            data-text="Sign up page continues the theme from the login page keeping the same design for these improves continuity. ">
+          <img src="images/herbarium/Signup.jpg" alt="Portrait 2">
+        </div>
+      </div>
+      
+      <div class="carousel-indicators">
+        <span class="dot" data-index="0"></span>
+        <span class="dot active" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
 
-  <div class="project-images">
+      </div>
+    </div>
+  
+    <div class="carousel-info">
+      <!-- Changed these from IDs to Classes -->
+      <h2 class="info-title">Title will load here</h2>
+      <p class="info-text">Description will load here.</p>
+    </div>
+  </div>
+
+</section>
+  <!-- <div class="project-images">
     <img src="images/herbarium/Home Page.jpg" alt="">
     <img src="images/herbarium/Signup.jpg" alt="">
     <img src="images/herbarium/Login.jpg" alt="">
     <img src="images/herbarium/Plant map.jpg" alt="">
     <img src="images/herbarium/Plant singlview.jpg" alt="">
     <img src="images/herbarium/Pokedex.jpg" alt="">
-  </div>
-</section>
+  </div> -->
 
-<script src="main.js"></script>
+<script src="projects.js"></script>
 </body>
 </html>

@@ -33,16 +33,63 @@
     ChefAI is an android application built using kotlin and jetpack compose. The app uses the OpenAI API to generate recipes based on user input. Users can input ingredients they have on hand, and the app will generate a recipe using those ingredients. The app also includes a feature to save favorite recipes and view them later.
   </p>
 
-  <div class="project-images">
-    <img src="images/chefai/chefai_dark_home.png" alt="">
-    <img src="images/chefai/chefai_dark_menu.png" alt="">
-    <img src="images/chefai/chefai_dark_desc.png" alt="">
-    <img src="images/chefai/chefai_light_home.png" alt="">
-    <img src="images/chefai/chefai_light_menu.png" alt="">
-    <img src="images/chefai/chefai_light_desc.png" alt="">
+  <div class="carousel-wrapper">
+    <div class="carousel-container">
+      <div class="slides-track">
+        <!-- Add text data directly to the HTML using data-* attributes -->
+        <div class="slide prev" data-index="0" 
+             data-title="Home Page Dark" 
+             data-text="This is where the user can enter an idea or style for their recipe, ingredients they already have, and a name for the recipe.">
+          <img src="images/chefai/chefai_dark_home.png" alt="Landscape">
+        </div>
+        
+        <div class="slide active" data-index="1" 
+             data-title="Menu Page Dark" 
+             data-text="This is where the user can see all previously generated recipes.">
+          <img src="images/chefai/chefai_dark_menu.png" alt="Portrait">
+        </div>
+        
+        <div class="slide next" data-index="2" 
+             data-title="Recipe Page Dark" 
+             data-text="Recipe details, instructions, and ingredients are displayed on this page.  ">
+          <img src="images/chefai/chefai_dark_desc.png" alt="Landscape 2">
+        </div>
+        
+        <div class="slide" data-index="3" 
+             data-title="Recipe Page Light" 
+             data-text="Recipe details, instructions, and ingredients are displayed on this page.  ">
+          <img src="images/chefai/chefai_light_desc.png" alt="Portrait 2">
+        </div>
+        <div class="slide" data-index="4" 
+            data-title="Home Page Light" 
+            data-text="This is where the user can enter an idea or style for their recipe, ingredients they already have, and a name for the recipe.">
+          <img src="images/chefai/chefai_light_home.png" alt="Portrait 2">
+        </div>
+        <div class="slide" data-index="5" 
+            data-title="Menu Page Light" 
+            data-text="This is where the user can see all previously generated recipes.">
+          <img src="images/chefai/chefai_light_menu.png" alt="Portrait 2">
+        </div>
+      </div>
+      
+      <div class="carousel-indicators">
+        <span class="dot" data-index="0"></span>
+        <span class="dot active" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+        <span class="dot" data-index="5"></span>
+      </div>
+    </div>
+  
+    <div class="carousel-info">
+      <!-- Changed these from IDs to Classes -->
+      <h2 class="info-title">Title will load here</h2>
+      <p class="info-text">Description will load here.</p>
+    </div>
   </div>
 </section>
 
-<script src="main.js"></script>
+<script src="projects.js"></script>
 </body>
 </html>
