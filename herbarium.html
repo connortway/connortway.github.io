@@ -1,104 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Herbarium</title>
-
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="crt.css" />
+  <script>
+    /* set the saved palette before first paint, so there is no flash */
+    try { var t = localStorage.getItem('ctos-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 
-<body>
+<body data-page="project" data-panel="work" data-path="C:\CONNORTWAY\WORK\HERBARIUM">
 
-<nav class="nav">
-  <a href="index.html#work" class="logo">Connor Tway</a>
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+<div class="crt-bg"></div>
+<canvas id="snakeField" aria-hidden="true"></canvas>
+
+<div class="crt-shell">
+  <div class="crt-screen">
+
+    <header class="crt-topbar">
+      <a href="index.html#work" class="brand">CONNOR TWAY</a>
+      <span class="tag">CT-OS</span>
+      <span class="crt-clock" id="clock">00:00</span>
+    </header>
+
+    <div class="crt-main">
+      <nav class="crt-menu" id="crtMenu" aria-label="Main menu"></nav>
+
+      <section class="crt-panel" id="crtPanel">
+        <article class="screen">
+          <h1 class="screen-title">HERBARIUM</h1>
+          <p class="screen-sub">react web application</p>
+          <p>
+            Herbarium is a React web application focusing on getting people outside learning
+            about their local environment.
+          </p>
+
+          <div class="viewer" data-viewer>
+            <div class="viewer-stage">
+              <button class="vbtn prev" type="button" aria-label="Previous frame">&lt;</button>
+
+              <div class="slide" data-title="Home Page"
+                   data-text="A simple main screen, direct user to either login or sign up.">
+                <img src="images/herbarium/Home Page.jpg" alt="Herbarium home page" />
+              </div>
+
+              <div class="slide" data-title="Login Page"
+                   data-text="A clean login page very simple, notice the embossed look for the box containing the input fields.">
+                <img src="images/herbarium/Login.jpg" alt="Herbarium login page" />
+              </div>
+
+              <div class="slide" data-title="Plant Map"
+                   data-text="Here is where the user can view and locate all of their previous plant finds on an interactive map.">
+                <img src="images/herbarium/Plant map.jpg" alt="Herbarium plant map" />
+              </div>
+
+              <div class="slide" data-title="Plant Info"
+                   data-text="This is where the user can view individual plants and receive care, environmental, and miscellaneous information about the selected plant.">
+                <img src="images/herbarium/Plant singlview.jpg" alt="Herbarium plant info page" />
+              </div>
+
+              <div class="slide" data-title="Herbarium"
+                   data-text="The Herbarium is where users can view all of the plants they have collected. Each entry is a link to the more detailed Plant Info page.">
+                <img src="images/herbarium/Pokedex.jpg" alt="Herbarium collection view" />
+              </div>
+
+              <div class="slide" data-title="Sign up"
+                   data-text="Sign up page continues the theme from the login page keeping the same design for these improves continuity.">
+                <img src="images/herbarium/Signup.jpg" alt="Herbarium sign up page" />
+              </div>
+
+              <button class="vbtn next" type="button" aria-label="Next frame">&gt;</button>
+            </div>
+
+            <div class="viewer-meta">
+              <span class="counter">FRAME 01/06</span>
+              <h3 class="v-title"></h3>
+              <p class="v-text"></p>
+              <ul class="viewer-dots"></ul>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <footer class="crt-statusbar">
+      <span class="path" id="statusPath">C:\CONNORTWAY\WORK\HERBARIUM</span>
+      <span class="hint" id="statusHint">ESC &middot; BACK TO MENU</span>
+      <span class="version">CT-OS v2.1.01p</span>
+    </footer>
+
   </div>
-</nav>
-
-<div class="menu" id="menu">
-  <a href="index.html">Home</a>
-  <a href="index.html#work">Work</a>
-  <a href="index.html#about">About</a>
-  <a href="index.html#contact">Contact</a>
 </div>
 
-<section>
-  <h1>Herbarium</h1>
-  <p class="project-description">
-    Herbarium is a React web application focusing on getting people outside learning about their local environment. 
-  </p>
-  <div class="carousel-wrapper">
-    <div class="carousel-container">
-      <div class="slides-track">
-        <!-- Add your text data directly to the HTML using data-* attributes -->
-        <div class="slide prev" data-index="0" 
-             data-title="Home Page" 
-             data-text="A simple main screen, direct user to either login or sign up.">
-          <img src="images/herbarium/Home Page.jpg" alt="Landscape">
-        </div>
-        
-        <div class="slide active" data-index="1" 
-             data-title="Login Page" 
-             data-text="A clean login page very simple, notice the embossed look for the box containing the input fields.">
-          <img src="images/herbarium/Login.jpg" alt="Portrait">
-        </div>
-        
-        <div class="slide next" data-index="2" 
-             data-title="Plant Map" 
-             data-text="Here is where the user can view and locate all of their previous plant finds on an interactive map.">
-          <img src="images/herbarium/Plant map.jpg" alt="Landscape 2">
-        </div>
-        
-        <div class="slide" data-index="3" 
-             data-title="Plant Info" 
-             data-text="This is where the user can view individual plants and receive care, environmental, and miscellaneous information about the selected plant. ">
-          <img src="images/herbarium/Plant singlview.jpg" alt="Portrait 2">
-        </div>
-        <div class="slide" data-index="4" 
-            data-title="Herbarium" 
-            data-text="The Herbarium is where users can view all of the plants they have collected. Each entry is a link to the more detailed Plant Info page.">
-          <img src="images/herbarium/Pokedex.jpg" alt="Portrait 2">
-        </div>
-        <div class="slide" data-index="5" 
-            data-title="Sign up" 
-            data-text="Sign up page continues the theme from the login page keeping the same design for these improves continuity. ">
-          <img src="images/herbarium/Signup.jpg" alt="Portrait 2">
-        </div>
-      </div>
-      
-      <div class="carousel-indicators">
-        <span class="dot" data-index="0"></span>
-        <span class="dot active" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-        <span class="dot" data-index="3"></span>
-        <span class="dot" data-index="3"></span>
-        <span class="dot" data-index="4"></span>
+<div class="crt-overlay" aria-hidden="true"></div>
+<div class="crt-roll" aria-hidden="true"></div>
+<pre class="boot" id="boot" aria-hidden="true"></pre>
 
-      </div>
-    </div>
-  
-    <div class="carousel-info">
-      <!-- Changed these from IDs to Classes -->
-      <h2 class="info-title">Title will load here</h2>
-      <p class="info-text">Description will load here.</p>
-    </div>
-  </div>
-
-</section>
-  <!-- <div class="project-images">
-    <img src="images/herbarium/Home Page.jpg" alt="">
-    <img src="images/herbarium/Signup.jpg" alt="">
-    <img src="images/herbarium/Login.jpg" alt="">
-    <img src="images/herbarium/Plant map.jpg" alt="">
-    <img src="images/herbarium/Plant singlview.jpg" alt="">
-    <img src="images/herbarium/Pokedex.jpg" alt="">
-  </div> -->
-
-<script src="projects.js"></script>
+<script src="crt.js"></script>
 </body>
 </html>
