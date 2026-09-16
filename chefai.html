@@ -1,95 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ChefAI</title>
-
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="crt.css" />
+  <script>
+    /* set the saved palette before first paint, so there is no flash */
+    try { var t = localStorage.getItem('ctos-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 
-<body>
+<body data-page="project" data-panel="work" data-path="C:\CONNORTWAY\WORK\CHEFAI">
 
-<nav class="nav">
-  <a href="index.html#work" class="logo">Connor Tway</a>
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+<div class="crt-bg"></div>
+<canvas id="snakeField" aria-hidden="true"></canvas>
+
+<div class="crt-shell">
+  <div class="crt-screen">
+
+    <header class="crt-topbar">
+      <a href="index.html#work" class="brand">CONNOR TWAY</a>
+      <span class="tag">CT-OS</span>
+      <span class="crt-clock" id="clock">00:00</span>
+    </header>
+
+    <div class="crt-main">
+      <nav class="crt-menu" id="crtMenu" aria-label="Main menu"></nav>
+
+      <section class="crt-panel" id="crtPanel">
+        <article class="screen">
+          <h1 class="screen-title">CHEFAI</h1>
+          <p class="screen-sub">kotlin &middot; jetpack compose &middot; openai api</p>
+          <p>
+            ChefAI is an android application built using kotlin and jetpack compose. The app uses
+            the OpenAI API to generate recipes based on user input. Users can input ingredients
+            they have on hand, and the app will generate a recipe using those ingredients. The app
+            also includes a feature to save favorite recipes and view them later.
+          </p>
+
+          <div class="viewer" data-viewer>
+            <div class="viewer-stage">
+              <button class="vbtn prev" type="button" aria-label="Previous frame">&lt;</button>
+
+              <div class="slide" data-title="Home Page Dark"
+                   data-text="This is where the user can enter an idea or style for their recipe, ingredients they already have, and a name for the recipe.">
+                <img src="images/chefai/chefai_dark_home.png" alt="ChefAI home page, dark theme" />
+              </div>
+
+              <div class="slide" data-title="Menu Page Dark"
+                   data-text="This is where the user can see all previously generated recipes.">
+                <img src="images/chefai/chefai_dark_menu.png" alt="ChefAI menu page, dark theme" />
+              </div>
+
+              <div class="slide" data-title="Recipe Page Dark"
+                   data-text="Recipe details, instructions, and ingredients are displayed on this page.">
+                <img src="images/chefai/chefai_dark_desc.png" alt="ChefAI recipe page, dark theme" />
+              </div>
+
+              <div class="slide" data-title="Recipe Page Light"
+                   data-text="Recipe details, instructions, and ingredients are displayed on this page.">
+                <img src="images/chefai/chefai_light_desc.png" alt="ChefAI recipe page, light theme" />
+              </div>
+
+              <div class="slide" data-title="Home Page Light"
+                   data-text="This is where the user can enter an idea or style for their recipe, ingredients they already have, and a name for the recipe.">
+                <img src="images/chefai/chefai_light_home.png" alt="ChefAI home page, light theme" />
+              </div>
+
+              <div class="slide" data-title="Menu Page Light"
+                   data-text="This is where the user can see all previously generated recipes.">
+                <img src="images/chefai/chefai_light_menu.png" alt="ChefAI menu page, light theme" />
+              </div>
+
+              <button class="vbtn next" type="button" aria-label="Next frame">&gt;</button>
+            </div>
+
+            <div class="viewer-meta">
+              <span class="counter">FRAME 01/06</span>
+              <h3 class="v-title"></h3>
+              <p class="v-text"></p>
+              <ul class="viewer-dots"></ul>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <footer class="crt-statusbar">
+      <span class="path" id="statusPath">C:\CONNORTWAY\WORK\CHEFAI</span>
+      <span class="hint" id="statusHint">ESC &middot; BACK TO MENU</span>
+      <span class="version">CT-OS v2.1.01p</span>
+    </footer>
+
   </div>
-</nav>
-
-<div class="menu" id="menu">
-  <a href="index.html">Home</a>
-  <a href="index.html#work">Work</a>
-  <a href="index.html#about">About</a>
-  <a href="index.html#contact">Contact</a>
 </div>
 
-<section>
-  <h1>ChefAI</h1>
-  <p class="project-description">
-    ChefAI is an android application built using kotlin and jetpack compose. The app uses the OpenAI API to generate recipes based on user input. Users can input ingredients they have on hand, and the app will generate a recipe using those ingredients. The app also includes a feature to save favorite recipes and view them later.
-  </p>
+<div class="crt-overlay" aria-hidden="true"></div>
+<div class="crt-roll" aria-hidden="true"></div>
+<pre class="boot" id="boot" aria-hidden="true"></pre>
 
-  <div class="carousel-wrapper">
-    <div class="carousel-container">
-      <div class="slides-track">
-        <!-- Add text data directly to the HTML using data-* attributes -->
-        <div class="slide prev" data-index="0" 
-             data-title="Home Page Dark" 
-             data-text="This is where the user can enter an idea or style for their recipe, ingredients they already have, and a name for the recipe.">
-          <img src="images/chefai/chefai_dark_home.png" alt="Landscape">
-        </div>
-        
-        <div class="slide active" data-index="1" 
-             data-title="Menu Page Dark" 
-             data-text="This is where the user can see all previously generated recipes.">
-          <img src="images/chefai/chefai_dark_menu.png" alt="Portrait">
-        </div>
-        
-        <div class="slide next" data-index="2" 
-             data-title="Recipe Page Dark" 
-             data-text="Recipe details, instructions, and ingredients are displayed on this page.  ">
-          <img src="images/chefai/chefai_dark_desc.png" alt="Landscape 2">
-        </div>
-        
-        <div class="slide" data-index="3" 
-             data-title="Recipe Page Light" 
-             data-text="Recipe details, instructions, and ingredients are displayed on this page.  ">
-          <img src="images/chefai/chefai_light_desc.png" alt="Portrait 2">
-        </div>
-        <div class="slide" data-index="4" 
-            data-title="Home Page Light" 
-            data-text="This is where the user can enter an idea or style for their recipe, ingredients they already have, and a name for the recipe.">
-          <img src="images/chefai/chefai_light_home.png" alt="Portrait 2">
-        </div>
-        <div class="slide" data-index="5" 
-            data-title="Menu Page Light" 
-            data-text="This is where the user can see all previously generated recipes.">
-          <img src="images/chefai/chefai_light_menu.png" alt="Portrait 2">
-        </div>
-      </div>
-      
-      <div class="carousel-indicators">
-        <span class="dot" data-index="0"></span>
-        <span class="dot active" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-        <span class="dot" data-index="3"></span>
-        <span class="dot" data-index="4"></span>
-        <span class="dot" data-index="5"></span>
-      </div>
-    </div>
-  
-    <div class="carousel-info">
-      <!-- Changed these from IDs to Classes -->
-      <h2 class="info-title">Title will load here</h2>
-      <p class="info-text">Description will load here.</p>
-    </div>
-  </div>
-</section>
-
-<script src="projects.js"></script>
+<script src="crt.js"></script>
 </body>
 </html>

@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resume</title>
-
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Connor Tway</title>
+  <link rel="stylesheet" href="crt.css" />
+  <script>
+    /* set the saved palette before first paint, so there is no flash */
+    try { var t = localStorage.getItem('ctos-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 
-<body>
+<body data-page="resume" data-path="C:\CONNORTWAY\RESUME.PDF">
 
-<nav class="nav">
-  <a href="index.html" class="logo">Connor Tway</a>
+<div class="crt-bg"></div>
+<canvas id="snakeField" aria-hidden="true"></canvas>
 
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+<div class="crt-shell">
+  <div class="crt-screen">
+
+    <header class="crt-topbar">
+      <a href="index.html" class="brand">CONNOR TWAY</a>
+      <span class="tag">CT-OS</span>
+      <span class="crt-clock" id="clock">00:00</span>
+    </header>
+
+    <div class="crt-main">
+      <nav class="crt-menu" id="crtMenu" aria-label="Main menu"></nav>
+
+      <section class="crt-panel" id="crtPanel">
+        <article class="screen">
+          <h1 class="screen-title">RESUME</h1>
+          <p class="screen-sub">william_tway_resume_2026.pdf</p>
+
+          <a href="files/William_Tway_Resume_2026.pdf" download class="btn">DOWNLOAD PDF</a>
+
+          <iframe
+            class="embed-frame"
+            src="files/William_Tway_Resume_2026.pdf"
+            title="Connor Tway resume">
+          </iframe>
+        </article>
+      </section>
+    </div>
+
+    <footer class="crt-statusbar">
+      <span class="path" id="statusPath">C:\CONNORTWAY\RESUME.PDF</span>
+      <span class="hint" id="statusHint">ESC &middot; BACK TO MENU</span>
+      <span class="version">CT-OS v2.1.01p</span>
+    </footer>
+
   </div>
-</nav>
-
-<div class="menu" id="menu">
-  <a href="index.html">Home</a>
-  <a href="index.html#work">Work</a>
-  <a href="resume.html">Resume</a>
-  <a href="index.html#contact">Contact</a>
 </div>
 
-<section class="resume-page">
+<div class="crt-overlay" aria-hidden="true"></div>
+<div class="crt-roll" aria-hidden="true"></div>
+<pre class="boot" id="boot" aria-hidden="true"></pre>
 
-<h1>Resume</h1>
-
-<a href="files/William_Tway_Resume_2026.pdf" download class="resume-download">
-Download PDF
-</a>
-
-<iframe 
-  src="files/William_Tway_Resume_2026.pdf"
-  class="resume-frame">
-</iframe>
-
-</section>
-
-<script src="main.js"></script>
-
+<script src="crt.js"></script>
 </body>
 </html>

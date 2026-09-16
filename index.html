@@ -4,87 +4,154 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Connor Tway</title>
-
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Connor Tway — developer. Projects, resume, and contact." />
+  <link rel="stylesheet" href="crt.css" />
+  <script>
+    /* set the saved palette before first paint, so there is no flash */
+    try { var t = localStorage.getItem('ctos-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 
-<body>
+<body data-page="home" data-panel="readme">
 
-  <!-- Snake Background -->
-  <canvas id="snakeCanvas"></canvas>
-  <button id="snakeToggle">Play Snake</button>
+<div class="crt-bg"></div>
+<canvas id="snakeField" aria-hidden="true"></canvas>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <a href="index.html" class="logo">Connor Tway</a>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+<div class="crt-shell">
+  <div class="crt-screen">
+
+    <header class="crt-topbar">
+      <a href="index.html" class="brand">CONNOR TWAY</a>
+      <span class="tag">CT-OS</span>
+      <span class="crt-clock" id="clock">00:00</span>
+    </header>
+
+    <div class="crt-main">
+
+      <nav class="crt-menu" id="crtMenu" aria-label="Main menu"></nav>
+
+      <section class="crt-panel" id="crtPanel">
+
+        <!-- ============ README ============ -->
+        <article class="screen" data-screen="readme">
+          <h1 class="big-title">HELLO.</h1>
+          <p class="screen-sub">readme.txt — 1 of 1</p>
+          <p>
+            I design and build clean digital experiences focused on usability,
+            clarity, and performance.
+          </p>
+          <p class="prompt caret">select a file from the directory</p>
+
+          <ul class="link-rows">
+            <li><a href="#work">View Projects <span class="meta">&gt;FOLDER&lt;</span></a></li>
+            <li><a href="resume.html">Resume <span class="meta">--FILE-&gt;</span></a></li>
+            <li><a href="https://github.com/connortway" target="_blank" rel="noopener">GitHub <span class="meta">--LINK-&gt;</span></a></li>
+            <li><a href="https://www.linkedin.com/in/william-tway-90895a2b3/" target="_blank" rel="noopener">LinkedIn <span class="meta">--LINK-&gt;</span></a></li>
+            <li><a href="wset/index.html">WSET <span class="meta">&gt;FOLDER&lt;</span></a></li>
+          </ul>
+        </article>
+
+        <!-- ============ WORK ============ -->
+        <article class="screen" data-screen="work" hidden>
+          <h2 class="screen-title">SELECTED WORK</h2>
+          <p class="screen-sub">C:\CONNORTWAY\WORK — 4 items</p>
+          <p>A collection of personal and university projects.</p>
+
+          <div class="project-grid">
+            <a href="herbarium.html" class="project-card">
+              <div class="thumb"><img src="images/herbarium_cover.png" alt="Herbarium project cover" /></div>
+              <div class="label"><span>herbarium</span><span class="kind">--FILE-&gt;</span></div>
+            </a>
+
+            <a href="dots/dots.html" class="project-card">
+              <div class="thumb"><img src="images/dots_poster.jpg" alt="Dots scale trainer cover" /></div>
+              <div class="label"><span>dots</span><span class="kind">&gt;FOLDER&lt;</span></div>
+            </a>
+
+            <a href="chefai.html" class="project-card">
+              <div class="thumb"><img src="images/chefai_cover.jpg" alt="ChefAI project cover" /></div>
+              <div class="label"><span>chefai</span><span class="kind">--FILE-&gt;</span></div>
+            </a>
+
+            <a href="guitarsales.html" class="project-card">
+              <div class="thumb"><img src="images/colab_cover.jpg" alt="Stratocaster sales analysis cover" /></div>
+              <div class="label"><span>strat_sales</span><span class="kind">--FILE-&gt;</span></div>
+            </a>
+          </div>
+        </article>
+
+        <!-- ============ ABOUT ============ -->
+        <article class="screen" data-screen="about" hidden>
+          <h2 class="screen-title">ABOUT</h2>
+          <p class="screen-sub">about.txt</p>
+          <p>
+            Hi, I'm Connor, I’m a developer focused on building clean, usable software and
+            interactive web experiences. I studied computer science at Pace University, where
+            I developed a strong foundation in software engineering and problem solving. My
+            projects explore the balance between engineering and design, with an emphasis on
+            simplicity, performance, and thoughtful interaction.
+          </p>
+        </article>
+
+        <!-- ============ CONTACT ============ -->
+        <article class="screen" data-screen="contact" hidden>
+          <h2 class="screen-title">CONTACT</h2>
+          <p class="screen-sub">contact.txt</p>
+          <p>Feel free to reach out, lets build something great.</p>
+
+          <ul class="link-rows">
+            <li><a href="mailto:twayconnor@gmail.com">twayconnor@gmail.com <span class="meta">--SEND-&gt;</span></a></li>
+            <li><a href="https://www.instagram.com/connortway/" target="_blank" rel="noopener">Instagram <span class="meta">--LINK-&gt;</span></a></li>
+            <li><a href="https://github.com/connortway" target="_blank" rel="noopener">GitHub <span class="meta">--LINK-&gt;</span></a></li>
+            <li><a href="https://www.linkedin.com/in/william-tway-90895a2b3/" target="_blank" rel="noopener">LinkedIn <span class="meta">--LINK-&gt;</span></a></li>
+          </ul>
+        </article>
+
+        <!-- ============ SNAKE ============ -->
+        <article class="screen" data-screen="snake" hidden>
+          <h2 class="screen-title">SNAKE.EXE</h2>
+          <p class="screen-sub">resident process &middot; always running</p>
+          <p>
+            The snake runs behind every page of this site. It plays itself until you take over:
+            press <strong>S</strong> anywhere to grab the controls, steer with the arrow keys or
+            WASD, and press <strong>ESC</strong> to hand it back. Your score shows in the status
+            bar while you play.
+          </p>
+
+          <div class="stat-rows">
+            <span>SCORE <span class="val" id="snakeScore">0000</span></span>
+            <span>BEST <span class="val" id="snakeBest">0000</span></span>
+            <span>MODE <span class="val" id="snakeMode">ATTRACT</span></span>
+          </div>
+
+          <button class="btn" id="snakeStart" type="button">TAKE CONTROL</button>
+        </article>
+
+        <!-- ============ SETTINGS ============ -->
+        <article class="screen" data-screen="settings" hidden>
+          <h2 class="screen-title">SETTINGS</h2>
+          <p class="screen-sub">display palette</p>
+          <p>Pick a tube. The choice is remembered on this device.</p>
+
+          <ul class="palette-list" id="paletteList"></ul>
+        </article>
+
+      </section>
     </div>
-  </nav>
 
-  <div class="menu" id="menu">
-    <a href="#home">Home</a>
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="wset/index.html">WSET</a>
+    <footer class="crt-statusbar">
+      <span class="path" id="statusPath">C:\CONNORTWAY</span>
+      <span class="hint" id="statusHint">&#9650;&#9660; SELECT &middot; ENTER OPEN &middot; S PLAYS SNAKE</span>
+      <span class="version">CT-OS v2.1.01p</span>
+    </footer>
+
   </div>
+</div>
 
-  <!-- Sections -->
-  <section id="home">
-    <h1 class="reveal">Hello.</h1>
-    <p class="reveal">
-      I design and build clean digital experiences focused on usability, clarity, and performance.
-    </p>
+<div class="crt-overlay" aria-hidden="true"></div>
+<div class="crt-roll" aria-hidden="true"></div>
+<pre class="boot" id="boot" aria-hidden="true"></pre>
 
-    <div class="links">
-      <div class="link-card reveal"><a href="#work" style="text-decoration: none; color: inherit;">→ View Projects</a></div>
-      <div class="link-card reveal"><a href="resume.html" style="text-decoration: none; color: inherit;">→ Resume</a></div>
-      <div class="link-card reveal"><a href="https://github.com/connortway" style="text-decoration: none; color: inherit;">→ GitHub</a></div>
-      <div class="link-card reveal"><a href="https://www.linkedin.com/in/william-tway-90895a2b3/" style="text-decoration: none; color: inherit;">→ LinkedIn</a></div>
-    </div>
-  </section>
-
-  <section id="work">
-    <h2 class="reveal">Selected Work</h2>
-    <p class="reveal">A collection of personal and university projects.</p>
-  
-    <div class="projects-grid reveal">
-      <a href="herbarium.html" class="project-card">
-        <img src="images/herbarium_cover.png" alt="Project 1">
-      </a>
-  
-      <a href="dots/dots.html" class="project-card">
-        <img src="images/dots_poster.jpg" alt="Project 2">
-      </a>
-  
-      <a href="chefai.html" class="project-card">
-        <img src="images/chefai_cover.jpg" alt="Project 3">
-      </a>
-  
-      <a href="guitarsales.html" class="project-card">
-        <img src="images/colab_cover.jpg" alt="Project 4">
-      </a>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2 class="reveal">About</h2>
-    <p class="reveal">Hi, I'm Connor, I’m a developer focused on building clean, usable software and interactive web experiences. I studied computer science at Pace University, where I developed a strong foundation in software engineering and problem solving. My projects explore the balance between engineering and design, with an emphasis on simplicity, performance, and thoughtful interaction.</p>
-  </section>
-
-  <section id="contact">
-    <h2 class="reveal">Contact</h2>
-    <p class="reveal">Feel free to reach out, lets build something great.</p>
-    <div class="reveal"><a href="twayconnor@gmail.com" style="text-decoration: none; color: inherit;">twayconnor@gmail.com</a></div>
-    <div class="reveal"><a href="https://www.instagram.com/connortway/" style="text-decoration: none; color: inherit;">Instagram</a></div>
-
-
-  </section>
-
-  <script src="main.js"></script>
+<script src="crt.js"></script>
 </body>
 </html>
