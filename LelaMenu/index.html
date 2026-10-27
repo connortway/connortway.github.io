@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f100a">
+  <title>Lela Wine Globe</title>
+  <meta name="description" content="Explore Lela's bottle list on a globe: every wine pinned where it's made.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.0/dist/maplibre-gl.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <div id="map" aria-label="Globe of wine origins"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">Lela</span>
+      <span class="brand-sub">wine globe</span>
+    </div>
+    <div class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="search" type="search" placeholder="Search wine, grape, place…" autocomplete="off" enterkeyhint="search" aria-label="Search the wine list">
+      <button id="search-clear" class="icon-btn small" aria-label="Clear search" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="chips" id="style-chips" role="group" aria-label="Filter by style"></div>
+  </header>
+
+  <div class="map-actions">
+    <button id="btn-list" class="pill-btn" aria-label="Show the list">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+      <span>List</span>
+    </button>
+    <button id="btn-filters" class="pill-btn" aria-label="More filters">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+      <span>Filters</span><span class="badge" id="filter-badge" hidden></span>
+    </button>
+    <button id="btn-home" class="pill-btn round" aria-label="Back to the whole globe">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+    </button>
+  </div>
+
+  <div class="count-line" id="count-line" aria-live="polite"></div>
+
+  <aside id="panel" class="panel" data-state="closed" aria-hidden="true">
+    <div class="panel-grip" id="panel-grip" aria-hidden="true"><span></span></div>
+    <button id="panel-close" class="icon-btn panel-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="panel-body" id="panel-body"></div>
+  </aside>
+
+  <div class="hint" id="hint" hidden>
+    <span class="hint-touch">Drag to spin · pinch to zoom · tap a pin</span>
+    <span class="hint-mouse">Drag to spin · scroll to zoom · click a pin</span>
+  </div>
+
+  <div class="fallback" id="fallback" hidden>
+    <p>This device can't show the 3D globe, so here's the list instead.</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

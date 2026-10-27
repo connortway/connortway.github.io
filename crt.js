@@ -24,6 +24,7 @@
     { rule: true },
     { label: "WSET",        kind: ">FOLDER<",  href: "wset/index.html" },
     { label: "DOTS",        kind: ">FOLDER<",  href: "dots/dots.html" },
+    { label: "WINE_GLOBE",  kind: ">FOLDER<",  href: "LelaMenu/" },
     { rule: true },
     { label: "github",      kind: "--LINK->",  href: "https://github.com/connortway", external: true },
     { label: "linkedin",    kind: "--LINK->",  href: "https://www.linkedin.com/in/william-tway-90895a2b3/", external: true },

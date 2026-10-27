@@ -1,1 +1,12 @@
 .DS_Store
+
+# Wine globe (LelaMenu/): publish only what the site needs; keep the source list,
+# build scripts, working data and the local pin editor out of the public repo.
+LelaMenu/bottleList.pdf
+LelaMenu/bottleList.xlsx
+LelaMenu/editor.html
+LelaMenu/PLAN.md
+LelaMenu/README.md
+LelaMenu/scripts/
+LelaMenu/data/*
+!LelaMenu/data/wines.json
